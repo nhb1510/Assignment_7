@@ -5,12 +5,13 @@
 
 // Hàm in ra kích thước và khoảng của 1 kiểu dữ liệu
 void print_one_type(const char *type_name, size_t size, double min, double max) {
+    // thêm 's' nếu size > 1 byte
     if (size > 1)
         printf("Size of %s: %zu bytes\n", type_name, size);
     else
         printf("Size of %s: %zu byte\n", type_name, size);
     
-    // Kiểm tra nếu là kiểu dữ liệu int hoặc float thì in ra giá trị min và max dưới dạng số nguyên
+    // Kiểm tra nếu là kiểu dữ liệu int hoặc char thì in ra giá trị min và max dưới dạng số nguyên
     if (strcmp(type_name, "int") == 0 || strcmp(type_name, "char") == 0)
         printf("Value range of %s: %d to %d\n", type_name, (int)min, (int)max);
     else

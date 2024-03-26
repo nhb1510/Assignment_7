@@ -29,7 +29,8 @@ void ADD_NEW_CONTACT ()
     // ghi tiếp vào file CONTACT_DATA
     FILE *file = fopen("CONTACT_DATA.txt", "a");
     if (file == NULL) {
-        printf("Cannot open file.\\n");
+        printf("Cannot open file.\n");
+        return ;
     }
     // fprintf (file,"Name: %s\nPhone: %s\nAddress: %s\n", contact.name, contact.phone_number, contact.address );
     fprintf (file,"%s\n%s\n%s\n", contact.name, contact.phone_number, contact.address );
@@ -43,6 +44,10 @@ void DISPLAY_ALL ()
     printf ("Contact List:\n################################\n");
     struct CONTACTS contact;
     FILE *file = fopen("CONTACT_DATA.txt", "r");
+        if (file == NULL) {
+        printf("Cannot open file.\n");
+        return ;
+    }
     // ghi dữ liệu từ file vào struct
     while (fgets (contact.name, sizeof(contact.name), file) != NULL) {
         fgets (contact.phone_number, sizeof(contact.phone_number), file);
@@ -71,7 +76,7 @@ void FIND_CONTACT ()
 
     FILE *file = fopen("CONTACT_DATA.txt", "r");
     if (file == NULL) {
-        printf("Cannot open file.\\n");
+        printf("Cannot open file.\n");
         return ;
     }
 

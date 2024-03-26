@@ -2,13 +2,6 @@
 #include <string.h>
 #include "contact_func.h"
 
-struct CONTACTS {
-
-    char name[60];
-    char phone_number[30];
-    char address [30];
-
-};
 
 int main ()
 {   

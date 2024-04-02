@@ -97,7 +97,7 @@ void FIND_CONTACT ()
     fgets(find_contact, sizeof (find_contact), stdin); // nhập tên để tìm kiếm contact
     find_contact[strcspn(find_contact, "\n")] = '\0';  // xóa ký tự xuống dòng
 
-    // tìm kiếm bằng cách diệt file CONTACT_DATA.txt con trỏ lúc này chạy theo fgets.
+    // tìm kiếm bằng cách duyệt file CONTACT_DATA.txt con trỏ lúc này chạy theo fgets.
     while (fgets (contact.name, sizeof(contact.name), file) != NULL) {
         fgets (contact.phone_number, sizeof(contact.phone_number), file);
         fgets (contact.address, sizeof(contact.address), file);

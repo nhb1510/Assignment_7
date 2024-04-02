@@ -6,8 +6,9 @@
 int main ()
 {   
     int menu_select; 
-    //in ra menu sử dụng vòng lặp do while
-    do
+    //in ra menu sử dụng while (true) : lặp vô tận
+    bool a = true;
+    while (a)
     {
         printf ("\nWelcome to the Contact Manager!\n1. Add a new contact\n2. Display all contacts\n3. Search for a contact\n4. Exit\n\n");
         printf ("Enter your choice: ");
@@ -28,10 +29,11 @@ int main ()
             case 4:
                 printf ("Goodbye!\n");
                 return 0;
-
+            default:
+                printf ("Invalid selection! Please enter a valid choice.");
+                break;
         }
     }
-    while (menu_select != 4);
 
 return 0;
 

@@ -18,13 +18,13 @@ void ADD_NEW_CONTACT ()
     // Nhập tông tin cho new contact
     printf ("Enter name: ");
     fgets (contact.name, sizeof(contact.name) , stdin);
-    contact.name [strcspn (contact.name,"\n")] = '\0'; 
+    //contact.name [strcspn (contact.name,"\n")] = '\0'; 
     printf ("Enter phone number: ");
     fgets (contact.phone_number, sizeof(contact.phone_number) , stdin);
-    contact.phone_number [strcspn (contact.phone_number,"\n")] = '\0'; 
+    //contact.phone_number [strcspn (contact.phone_number,"\n")] = '\0'; 
     printf ("Enter address: ");
     fgets (contact.address, sizeof(contact.address) , stdin);
-    contact.address [strcspn (contact.address,"\n")] = '\0'; 
+    //contact.address [strcspn (contact.address,"\n")] = '\0'; 
 
     // ghi tiếp vào file CONTACT_DATA
     FILE *file = fopen("CONTACT_DATA.txt", "a");
@@ -34,6 +34,7 @@ void ADD_NEW_CONTACT ()
     }
     // fprintf (file,"Name: %s\nPhone: %s\nAddress: %s\n", contact.name, contact.phone_number, contact.address );
     fprintf (file,"%s\n%s\n%s\n", contact.name, contact.phone_number, contact.address );
+    printf ("Contact has been added successfully.\n");
     fclose (file);
 }
 

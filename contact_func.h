@@ -117,5 +117,6 @@ void FIND_CONTACT ()
             printf ("Address: %s\n", contact.address);
         }
     }
+    fclose(file);
 }
 #endif
